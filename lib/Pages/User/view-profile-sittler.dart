@@ -95,9 +95,9 @@ class _ViewProfileSitllerState extends State<ViewProfileSitller> {
             return Scaffold(
               backgroundColor: Colors.white,
               appBar: AppBar(
-                iconTheme: IconThemeData(color: Colors.orange),
+                iconTheme: IconThemeData(color: Color(0xff004aa0)),
                 centerTitle: true,
-                title: Text("View Profile", style: TextStyle(color: Colors.orange)),
+                title: Text("View Profile", style: TextStyle(color: Color(0xff004aa0))),
                 backgroundColor: Colors.white,
                 elevation: 0,
                 leading: IconButton(
@@ -113,7 +113,7 @@ class _ViewProfileSitllerState extends State<ViewProfileSitller> {
                   Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: IconButton(
-                      icon: Icon(Icons.phone, color: Colors.orange),
+                      icon: Icon(Icons.phone, color: Color(0xff004aa0)),
                       onPressed: () async {
                         //await launch("tel:" "${currentUser[0]['contactNumber']}");
                       },
@@ -159,7 +159,7 @@ class _ViewProfileSitllerState extends State<ViewProfileSitller> {
                                             (context, url, downloadProgress) =>
                                             CircularProgressIndicator(
                                               value: downloadProgress.progress,
-                                              color: Colors.orange,
+                                              color: Color(0xff004aa0),
                                             ),
                                         errorWidget: (context, url, error) => Icon(
                                           Icons.error,
@@ -218,7 +218,7 @@ class _ViewProfileSitllerState extends State<ViewProfileSitller> {
                                 Icons.favorite,
                                 size: 20,
                                 color: context.watch<SignUpSignInController>().getRateStar
-                                    ? Colors.orangeAccent
+                                    ? Color(0xff004aa0)
                                     : Colors.red[400],
                               ),
                             ),
@@ -260,24 +260,24 @@ class _ViewProfileSitllerState extends State<ViewProfileSitller> {
                             "${currentUser[0]['fullName']}",
                             icon: Icon(
                               Icons.account_circle,
-                              color: Colors.orange,
+                              color: Color(0xff004aa0),
                             ),
                           ),
                           SizedBox(
                             height: 15.0,
                           ),
                           textField("${currentUser[0]['email']}",
-                              icon: Icon(Icons.email, color: Colors.blue)),
+                              icon: Icon(Icons.email, color: Color(0xff004aa0))),
                           SizedBox(
                             height: 15.0,
                           ),
                           textField("${currentUser[0]['address']}",
-                              icon: Icon(Icons.add_location, color: Colors.red)),
+                              icon: Icon(Icons.add_location, color: Color(0xff004aa0))),
                           SizedBox(
                             height: 15.0,
                           ),
                           textField("${currentUser[0]['contactNumber']}",
-                              icon: Icon(Icons.phone, color: Colors.orange)),
+                              icon: Icon(Icons.phone, color: Color(0xff004aa0))),
                         ],
                       ),
                       SizedBox(

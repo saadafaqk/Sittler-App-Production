@@ -43,96 +43,66 @@ class _MyBookingListState extends State<MyBookingList> {
                   return Card(
                     elevation: 1,
                     child: ListTile(
-                      leading: Image.network(
-                        userStaff.get('userStaff.imageUrl'),
-                      ),
+                      leading: CircleAvatar( radius: 30, backgroundImage: NetworkImage(userStaff.get('userStaff.imageUrl').toString())), // Image.network( // userStaff.get('userStaff.imageUrl'), ),
                       title: Text(userStaff.get('userStaff.fullName')),
                       subtitle: Text(userStaff.get('userStaff.email')),
-                      onTap: () {
-                        showModalBottomSheet(
-                            backgroundColor: Colors.white,
-                            shape: const RoundedRectangleBorder(
-                                borderRadius: BorderRadius.only(
-                                    topLeft: Radius.circular(20),
-                                    topRight: Radius.circular(20))),
-                            elevation: 20,
-                            context: context,
-                            builder: (context) {
-                              return Column(
-                                mainAxisSize: MainAxisSize.min,
-                                children: <Widget>[
-                                  Padding(
-                                    padding: const EdgeInsets.all(8.0),
-                                    child: Material(
-                                      elevation: 5,
-                                      borderRadius: BorderRadius.circular(20),
-                                      color: Colors.orange,
-                                      child: MaterialButton(
-                                          padding: const EdgeInsets.fromLTRB(20, 15, 20, 15),
-                                          minWidth: MediaQuery.of(context).size.width,
-                                          onPressed: () async {},
-                                          child: const Text(
-                                            "Cancel Transaction",
-                                            textAlign: TextAlign.center,
-                                            style: TextStyle(
-                                              fontSize: 16,
-                                              color: Colors.white,
-                                            ),
-                                          )),
-                                    ),
-                                  ),
-                                  Padding(
-                                    padding: const EdgeInsets.all(8.0),
-                                    child: Material(
-                                      elevation: 5,
-                                      borderRadius: BorderRadius.circular(20),
-                                      color: Colors.blue,
-                                      child: MaterialButton(
-                                          padding:
-                                              const EdgeInsets.fromLTRB(20, 15, 20, 15),
-                                          minWidth: MediaQuery.of(context).size.width,
-                                          onPressed: () async {
-                                            Navigator.of(context).pop();
+                      onTap: () async {
+
+                        Navigator.of(context).pop();
                                             RouteNavigator.gotoPage(
                                                 context,
                                                 ChatToStaff(
                                                     staffInfo: BookModel.fromMap(
                                                         userStaff.data())));
-                                          },
-                                          child: const Text(
-                                            "Send Message",
-                                            textAlign: TextAlign.center,
-                                            style: TextStyle(
-                                              fontSize: 16,
-                                              color: Colors.white,
-                                            ),
-                                          )),
-                                    ),
-                                  ),
-                                  Padding(
-                                    padding: const EdgeInsets.all(8.0),
-                                    child: Material(
-                                      elevation: 5,
-                                      borderRadius: BorderRadius.circular(20),
-                                      color: Colors.green,
-                                      child: MaterialButton(
-                                          padding:
-                                              const EdgeInsets.fromLTRB(20, 15, 20, 15),
-                                          minWidth: MediaQuery.of(context).size.width,
-                                          onPressed: () async {},
-                                          child: const Text(
-                                            "Edit Booking",
-                                            textAlign: TextAlign.center,
-                                            style: TextStyle(
-                                              fontSize: 16,
-                                              color: Colors.white,
-                                            ),
-                                          )),
-                                    ),
-                                  ),
-                                ],
-                              );
-                            });
+
+
+
+                        // showModalBottomSheet(
+                        //     backgroundColor: Colors.white,
+                        //     shape: const RoundedRectangleBorder(
+                        //         borderRadius: BorderRadius.only(
+                        //             topLeft: Radius.circular(20),
+                        //             topRight: Radius.circular(20))),
+                        //     elevation: 20,
+                        //     context: context,
+                        //     builder: (context) {
+                        //       return Column(
+                        //         mainAxisSize: MainAxisSize.min,
+                        //         children: <Widget>[
+                                
+                        //           Padding(
+                        //             padding: const EdgeInsets.all(8.0),
+                        //             child: Material(
+                        //               elevation: 5,
+                        //               borderRadius: BorderRadius.circular(20),
+                        //               color: Colors.blue,
+                        //               child: MaterialButton(
+                        //                   padding:
+                        //                       const EdgeInsets.fromLTRB(20, 15, 20, 15),
+                        //                   minWidth: MediaQuery.of(context).size.width,
+                        //                   onPressed: () async {
+                        //                     Navigator.of(context).pop();
+                        //                     RouteNavigator.gotoPage(
+                        //                         context,
+                        //                         ChatToStaff(
+                        //                             staffInfo: BookModel.fromMap(
+                        //                                 userStaff.data())));
+                        //                   },
+                        //                   child: const Text(
+                        //                     "Send Message",
+                        //                     textAlign: TextAlign.center,
+                        //                     style: TextStyle(
+                        //                       fontSize: 16,
+                        //                       color: Colors.white,
+                        //                     ),
+                        //                   )
+                        //                   ),
+                        //             ),
+                        //           ),
+                                
+                        //         ],
+                        //       );
+                        //     });
                       },
                     ),
                   );

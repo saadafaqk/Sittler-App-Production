@@ -7,6 +7,7 @@ import 'package:sittler_app/Model/book-model.dart';
 import 'package:http/http.dart' as http;
 import 'package:sittler_app/Pages/User/view-profile-sittler.dart';
 import 'package:sittler_app/Routes/routes.dart';
+import 'package:sittler_app/Widgets/sizebox.dart';
 
 class ChatToStaff extends StatefulWidget {
   final BookModel staffInfo;
@@ -86,8 +87,10 @@ class _ChatToStaffState extends State<ChatToStaff> {
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               CircleAvatar(
-                child: Image.network(widget.staffInfo.userStaff!['imageUrl'].toString()),
+                backgroundImage: NetworkImage(widget.staffInfo.userStaff!['imageUrl'].toString()),
+                // Image.network(widget.staffInfo.userStaff!['imageUrl'].toString()),
               ),
+              addHorizontalSpace(15),
               Text(widget.staffInfo.userStaff!['fullName']),
               Spacer(),
               OutlinedButton(onPressed: (){
@@ -154,8 +157,8 @@ class _ChatToStaffState extends State<ChatToStaff> {
             Expanded(
                 flex: 1,
                 child: Container(
-                  alignment: Alignment.bottomLeft,
-                  color: Colors.black26,
+                  alignment: Alignment.center,
+                  color: Color.fromARGB(66, 156, 146, 146),
                   child: Container(
                     margin: const EdgeInsets.all(12),
                     child: Form(
@@ -173,12 +176,12 @@ class _ChatToStaffState extends State<ChatToStaff> {
                               },
                               icon: const Icon(Icons.send)),
                           hintText: "Write message...",
-                          hintStyle: const TextStyle(color: Colors.white60),
+                          hintStyle: const TextStyle(color: Color.fromARGB(153, 161, 161, 161)),
                           filled: true,
-                          fillColor: Colors.blueGrey,
+                          fillColor: Color.fromARGB(255, 255, 255, 255),
                           border: const OutlineInputBorder(
                             // width: 0.0 produces a thin "hairline" border
-                            borderRadius: BorderRadius.all(Radius.circular(15.0)),
+                            borderRadius: BorderRadius.all(Radius.circular(20.0)),
                             borderSide: BorderSide.none,
 
                             //borderSide: const BorderSide(),
